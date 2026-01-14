@@ -26,7 +26,7 @@
 #ifdef _MSC_VER
 #define SEP_API __declspec(dllexport)
 #else
-#define SEP_API __attribute__((visibility("default")))
+#define SEP_API extern "C"
 #endif
 
 /* datatype codes */
@@ -500,7 +500,7 @@ SEP_API void sep_ellipse_coeffs(
 /*----------------------- info & error messaging ----------------------------*/
 
 /* sep_version_string : library version (e.g., "0.2.0") */
-SEP_API extern const char * const sep_version_string;
+SEP_API const char * const sep_version_string;
 
 /* sep_get_errmsg()
  *
